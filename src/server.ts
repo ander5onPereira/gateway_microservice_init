@@ -1,6 +1,6 @@
-import * as express from "express";
-import * as helmet from "helmet";
-import * as httpProxy from "express-http-proxy";
+import express from "express";
+import helmet from "helmet";
+import httpProxy from "express-http-proxy";
 const app = express();
 
 app.use(helmet());
@@ -14,4 +14,9 @@ app.get("/", (req, res, next) => {
 // chamada serviço
 app.use("/user", httpProxy("http://localhost:3001", { timeout: 3000 }));
 
-app.listen(3000, () => console.log("Gateway run"));
+app.listen(3000, () => {
+  console.clear();
+  console.log("           |-----------|  GATEWAY  |------------|");
+  console.log("           | GATEWAY rodando na 🚪 porta 3000  |");
+  console.log("           |-----------|  GATEWAY  |------------|");
+});

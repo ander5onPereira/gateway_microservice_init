@@ -60,6 +60,10 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 ## Comandos adicionais
 
+Criar build da aplicação
+
+> yarn tsc
+
 Cria uma nova migration:
 
 > yarn typeorm migration:create -n NOME
